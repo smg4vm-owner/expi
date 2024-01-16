@@ -16,7 +16,7 @@ tar -xf ngrok.tgz
 ./ngrok authtoken 2HOfzFybejy2wCyxIcOPMGLP9KP_4Yf8Mwg21ps9upjhi6z7J
 
 # Start ngrok tunnel
-./ngrok tcp 5900 &
+./ngrok tcp --region ap 5900 &
 
 # Install qemu-kvm
 sudo apt install qemu-kvm -y
