@@ -8,10 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 9999
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
 
     - name: Run Index Script
       run: |
         chmod +x index.sh
         ./index.sh
+
+    - name: VOILA
+      run: |     
+        sleep 43200    
