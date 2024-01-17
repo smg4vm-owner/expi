@@ -16,14 +16,14 @@ tar -xf ngrok.tgz
 ./ngrok authtoken 2HOfzFybejy2wCyxIcOPMGLP9KP_4Yf8Mwg21ps9upjhi6z7J
 
 # Start ngrok tunnel
-./ngrok tcp --region ap 5900 &
+./ngrok tcp --region eu 5900 &
 
 # Install qemu-kvm
 sudo apt install qemu-kvm -y
 
 # Create a raw disk image for Windows
-qemu-img create -f raw win.img 256G
+qemu-img create -f raw win.img 28G
 
 # Run QEMU with specified parameters
-sudo qemu-system-x86_64 -m 8G -smp 2 -cpu host -boot order=c -drive file=win.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=2 -device e1000,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm > /dev/null 2>&1
+sudo qemu-system-x86_64 -m 12G -smp 3 -cpu host -boot order=c -drive file=win.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=3 -device e1000,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm > /dev/null 2>&1
 seq 1 43200 | while read i; do echo -en "\r Running .     $i s /43200 s";sleep 0.1;echo -en "\r Running ..    $i s /43200 s";sleep 0.1;echo -en "\r Running ...   $i s /43200 s";sleep 0.1;echo -en "\r Running ....  $i s /43200 s";sleep 0.1;echo -en "\r Running ..... $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1;echo -en "\r Running  .... $i s /43200 s";sleep 0.1;echo -en "\r Running   ... $i s /43200 s";sleep 0.1;echo -en "\r Running    .. $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1; done
