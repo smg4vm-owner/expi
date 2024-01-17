@@ -7,7 +7,7 @@ sudo apt update -y
 wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 
 # Download Windows ISO
-wget -O win.iso "https://drive.massgrave.dev/en-us_windows_10_business_editions_version_22h2_updated_dec_2023_x64_dvd_68a2d40b.iso"
+wget -O win.iso "https://drive.massgrave.dev/en-us_windows_server_2022_updated_dec_2023_x64_dvd_f101ef8f.iso"
 
 # Extract ngrok
 tar -xf ngrok.tgz
